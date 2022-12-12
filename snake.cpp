@@ -6,9 +6,9 @@ char dir = 's';
 char last_dir = 's';
 
 #define LED_PIN 1
-#define ROWS 16
-#define COLS 16
-#define LED_COUNT 16*16
+#define ROWS 12
+#define COLS 12
+#define LED_COUNT 144
 
 #define UP	7
 #define DOWN	6
@@ -22,8 +22,8 @@ int map_px ( int l, int c ) {
 
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-int snake_x = 6;
-int snake_y = 6;
+int snake_x = ROWS/6;
+int snake_y = COLS/6;
 
 int growing = 2;
 int snake_size = 3;
@@ -267,7 +267,7 @@ void move_snake(char c) {
 	else if(c == 'r' && last_dir == 'l') last_dir = 'l';
 	else if(c == 'l' && last_dir == 'r') last_dir = 'r';
 	else last_dir = c;
-	
+
 	switch(last_dir) { 
 		case 'u' :
 			snake_x = snake[0][0] - 1;
@@ -302,10 +302,10 @@ void move_snake(char c) {
 		if(!active_power) new_power = 1;
 	}
 	
-	if(snake_x == power_x && snake_y == power_y && active_power) {
+	/*if(snake_x == power_x && snake_y == power_y && active_power) {
 		active_power = false;
 		power_map();
-	}
+	}*/
 
 	for(int i = snake_size - 1; i > 0; i--) { 
 		snake[i][0] = snake[i-1][0];
