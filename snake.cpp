@@ -302,10 +302,10 @@ void move_snake(char c) {
 		if(!active_power) new_power = 1;
 	}
 	
-	/*if(snake_x == power_x && snake_y == power_y && active_power) {
+	if(snake_x == power_x && snake_y == power_y && active_power) {
 		active_power = false;
 		power_map();
-	}*/
+	}
 
 	for(int i = snake_size - 1; i > 0; i--) { 
 		snake[i][0] = snake[i-1][0];
