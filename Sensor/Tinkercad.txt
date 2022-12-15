@@ -1,0 +1,2 @@
+Sensor de proximidade com led:
+https://www.tinkercad.com/things/2tX0vS2Z1bF-grand-maimu-vihelmo/editel?tenant=circuits
